@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="point1" id="point1" placeholder="Nhập  điểm bài kiểm tra">
+    <input type="text" name="point2" id="point2"  placeholder="Nhập điểm thi giữa kì">
+    <input type="text" name="point3" id="point3"  placeholder="Nhập điểm thi cuối kì">
+    <button onclick="calculateAcademi()">Tính điểm học lực</button>
+    <p id="result"></p>
+    <script>
+        function calculateAcademi() {
+            var point1 = parseFloat(document.getElementById('point1').value);
+            var point2 = parseFloat(document.getElementById('point2').value);
+            var point3 = parseFloat(document.getElementById('point3').value);
+            var average = (point1 + point2 + point3) / 3;
+            var result = "";
+            if (average >= 9) {
+                result = "Học lực: Xuất sắc";
+            } else if (average >= 8) {
+                result = "Học lực: Giỏi";
+            } else if (average >= 6.5) {
+                result = "Học lực: Khá";
+            } else if (average >= 5) {
+                result = "Học lực: Trung bình";
+            } else {
+                result = "Học lực: Yếu";
+            }
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
