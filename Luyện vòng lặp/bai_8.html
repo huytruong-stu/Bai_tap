@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Đoán Số Nâng Cấp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="playGame()">Bắt đầu</button>
+
+    <script>
+        function playGame() {
+            // 1. Nhập khoảng muốn đoán
+            let khoangInput = prompt("Bạn muốn đoán trong khoảng từ 0 đến bao nhiêu?");
+            let maxNumber = parseInt(khoangInput);
+
+            if (isNaN(maxNumber) || maxNumber <= 0) {
+                alert("Vui lòng nhập một số nguyên dương hợp lệ!");
+                return;
+            }
+
+            // 2. Máy chọn số ngẫu nhiên
+            let soBiMat = Math.floor(Math.random() * (maxNumber + 1));
+            let soLanDoan = 0;
+            let checkWin = false;
+
+            // 3. Cho phép đoán tối đa 3 lần
+            while (soLanDoan < 3) {
+                let dudoan = prompt(`Lượt ${soLanDoan + 1}/3: Nhập số bạn đoán (0 - ${maxNumber}):`);
+                
+                // Nếu người dùng nhấn Cancel
+                if (dudoan === null) break; 
+                
+                let soDoan = parseInt(dudoan);
+                soLanDoan++;
+
+                if (soDoan === soBiMat) {
+                    alert("Chúc mừng! Bạn đã đoán chính xác số " + soBiMat);
+                    checkWin = true;
+                    break;
+                } else if (soDoan > soBiMat) {
+                    alert("Số bạn đoán LỚN HƠN số bí mật.");
+                } else {
+                    alert("Số bạn đoán BÉ HƠN số bí mật.");
+                }
+            }
+
+            // Kết thúc lượt chơi
+            if (!checkWin) {
+                alert("Bạn đã hết lượt! Số bí mật là: " + soBiMat + ". Hẹn gặp lại lần sau!");
+            }
+        }
+    </script>
+</body>
+</html>

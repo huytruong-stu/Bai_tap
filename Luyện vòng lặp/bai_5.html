@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function sumFibonacci(n) {
+            let a = 0;
+            let b = 1;
+            let sum = 0;
+        for (let i = 0; i < n; i++) {
+            sum += a;          // Cộng số hiện tại vào tổng
+            let next = a + b;  // Tính số Fibonacci tiếp theo
+            a = b;             // Gán a bằng số liền sau
+            b = next;          // Gán b bằng số tiếp theo vừa tính
+    }
+
+        return sum;
+    }
+
+// Tính tổng 20 số đầu tiên
+const n = 20;
+const result = sumFibonacci(n);
+
+console.log(`Tổng của ${n} số đầu tiên trong dãy Fibonacci là: ${result}`);
+    </script>
+</body>
+</html>
