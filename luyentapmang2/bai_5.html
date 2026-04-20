@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str1 = "Hello Gemini";
+        let str2 = "hello gemini";
+        function checkStrings(s1, s2) {
+            document.write("Chuỗi 1: '" + s1 + "'");
+            document.write(" <br/> Chuỗi 2: '" + s2 + "'");
+            document.write("---");
+            if (s1 === s2) {
+                document.write(" <br/> Kết quả 1: Hai chuỗi giống hệt nhau (Case-sensitive).");
+            } else {
+                document.write(" <br/> Kết quả 1: Hai chuỗi khác nhau.");
+            }
+            if (s1.toLowerCase() === s2.toLowerCase()) {
+                document.write(" <br/> Kết quả 2: Hai chuỗi giống nhau về nội dung (Non-case-sensitive).");
+            } else {
+                document.write("  Kết quả 2: Hai chuỗi hoàn toàn khác nhau.");
+            }
+        }
+        checkStrings(str1, str2);
+    </script>
+</body>
+
+</html>
