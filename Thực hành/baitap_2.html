@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const input = "025468";
+        const result = input.replace(/([02468])(?=[02468])/g, '$1-'); // Positive Lookahead – kiểm tra xem ngay phía sau nó có phải là một số chẵn khác hay không
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

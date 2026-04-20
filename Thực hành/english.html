@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let engLish = ["one", "rice", "school", "you bad", "five", "what"];
+        let vietNamese = ["một", "cơm", "trường", "bạn tồi", "năm", "cái gì"];
+        let x = prompt("Nhập từ tiếng Anh (one, rice, school, you bad, five, what):");
+        let index = engLish.indexOf(x);
+        if (index !== -1) {
+            alert("Từ tiếng Việt tương ứng là: " + vietNamese[index]);
+        } else {
+            alert("Từ không có trong danh sách.");
+        }
+    </script>
+</body>
+</html>
