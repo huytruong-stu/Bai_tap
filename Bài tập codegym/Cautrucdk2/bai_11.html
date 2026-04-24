@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính thuế TNCN</title>
+</head>
+<body>
+    <h2>Tính thuế thu nhập cá nhân</h2>
+
+    <label>Thu nhập (VND):</label>
+    <input type="number" id="income"><br><br>
+
+    <label>Giảm trừ (VND):</label>
+    <input type="number" id="deduction" value="11000000"><br><br>
+
+    <button onclick="tinhThue()">Tính thuế</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function tinhThue() {
+            let income = parseFloat(document.getElementById("income").value);
+            let deduction = parseFloat(document.getElementById("deduction").value);
+
+            let taxable = income - deduction;
+            if (taxable <= 0) {
+                document.getElementById("result").innerText = "Không phải nộp thuế";
+                return;
+            }
+
+            let tax = 0;
+
+            if (taxable <= 5000000) {
+                tax = taxable * 0.05;
+            } else if (taxable <= 10000000) {
+                tax = 5000000 * 0.05 + (taxable - 5000000) * 0.1;
+            } else if (taxable <= 18000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.1 + (taxable - 10000000) * 0.15;
+            } else if (taxable <= 32000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + (taxable - 18000000) * 0.2;
+            } else if (taxable <= 52000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + (taxable - 32000000) * 0.25;
+            } else if (taxable <= 80000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + (taxable - 52000000) * 0.3;
+            } else {
+                tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + 20000000 * 0.25 + 28000000 * 0.3 + (taxable - 80000000) * 0.35;
+            }
+
+            document.getElementById("result").innerText =
+                "Thuế phải nộp: " + tax.toLocaleString() + " VND";
+        }
+    </script>
+</body>
+</html>

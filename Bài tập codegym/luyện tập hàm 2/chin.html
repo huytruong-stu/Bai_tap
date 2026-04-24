@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function demKiTu(mang, kiTu) {
+            let count = 0;
+            for (let item of mang) {
+                if (item === kiTu) {
+                    count++;
+                }
+            }
+            return count > 0 ? count : -1;
+        }
+        const danhSach = ['a', 'b', 'c', 'a', 'b', 'c', 'a'];
+        document.write("Số lần xuất hiện của 'a' :", demKiTu(danhSach, 'a'))
+        document.write("<br/> Số lần xuất hiện của 'z' :", demKiTu(danhSach, 'z'))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function findFirstFibDivisibleBy5() {
+        let a = 1; // F1
+        let b = 1; // F2
+        let temp;
+    // Nếu bạn coi 0 là số đầu tiên của dãy Fibonacci và 0 chia hết cho 5:
+    // thì kết quả sẽ là 0. Nhưng thông thường bài toán yêu cầu số dương.
+    while (a % 5 !== 0) {
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return a;
+}
+
+const result = findFirstFibDivisibleBy5();
+console.log("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là:", result);
+    </script>
+</body>
+</html>

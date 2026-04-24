@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sWap(a, b) {
+            document.write(`Trước khi đổi: a = ${a}, b = ${b}`);
+            [a, b] = [b, a];
+            document.write(` <br/> Sau khi đổi : a = ${a}, b = ${b}`);
+            return [a, b];
+        }
+        let x = prompt("Nhập vào a");
+        let y = prompt("Nhập vào b");
+        [x, y] = sWap(x, y);
+    </script>
+</body>
+
+</html>

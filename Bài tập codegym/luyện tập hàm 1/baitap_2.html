@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tăng giá trị đối số</title>
+
+    <script>
+        function incrementNumber(number) {
+            return number + 1;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Kết quả xử lý hàm:</h2>
+
+    <script>
+        let myNumber = parseFloat(prompt("Nhập vào đây"));
+
+        let result = incrementNumber(myNumber);
+
+        document.write("Giá trị ban đầu: " + myNumber + "<br>");
+        document.write("Giá trị sau khi tăng 1 đơn vị là: <strong>" + result + "</strong>");
+    </script>
+
+</body>
+
+</html>

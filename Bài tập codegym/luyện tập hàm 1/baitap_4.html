@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addNumbers() {
+    firstNum = prompt("Nhập số") ;
+    secondNum = prompt("Nhập số");
+    result = firstNum + secondNum;
+    return result;
+}
+
+result = 0;
+
+// Hiển thị giá trị của result trước khi gọi hàm (Kết quả sẽ là 0)
+alert("Giá trị trước khi gọi hàm: " + result);
+
+result = addNumbers();
+
+// Hiển thị giá trị của result sau khi gọi hàm (Kết quả sẽ là 12)
+alert("Giá trị sau khi gọi hàm: " + result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = 20;
+        let n1 = 0, n2 = 1, nextTerm;
+        console.log("20 số đầu tiên trong dãy Fibonacci là:");
+         for (let i = 1; i <= n; i++) {
+            console.log(n1); // Hiển thị số hiện tại
+            // Tính toán số tiếp theo
+            nextTerm = n1 + n2;
+            n1 = n2;
+            n2 = nextTerm;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        // Bước 2: Tạo hàm tìm kiếm
+        function findConstellation(starName) {
+            for (let i = 0; i < stars.length; i++) {
+                // So sánh tên nhập vào với mảng stars (không phân biệt hoa thường để thân thiện hơn)
+                if (stars[i].toLowerCase() === starName.toLowerCase()) {
+                    return constellations[i];
+                }
+            }
+            // Nếu chạy hết vòng lặp mà không tìm thấy
+            return null;
+        }
+
+        // Bước 3: Sử dụng prompt để nhận dữ liệu từ người dùng
+        let inputStar = prompt("Nhập tên ngôi sao bạn muốn tìm:");
+
+        if (inputStar) {
+            let result = findConstellation(inputStar);
+
+            if (result) {
+                document.getElementById("result").innerHTML =
+                    "Ngôi sao <strong>" + inputStar + "</strong> thuộc chòm sao: <strong>" + result + "</strong>";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Không tìm thấy ngôi sao có tên: <strong>" + inputStar + "</strong>";
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Bạn chưa nhập tên ngôi sao nào.";
+        }
+    </script>
+</body>
+
+</html>

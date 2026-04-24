@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let temperature = prompt("Vui lòng nhập nhiệt độ hiện tại:");
+        temperature = Number(temperature);
+        while (temperature > 100 || temperature < 20) {
+    
+        if (temperature > 100) {
+        temperature = prompt("Nhiệt độ quá cao! Vui lòng giảm nhiệt độ (Nhập lại):");
+        } else {
+        temperature = prompt("Nhiệt độ quá thấp! Vui lòng tăng nhiệt độ (Nhập lại):");
+        }
+    
+    // Cập nhật lại giá trị kiểu số sau mỗi lần nhập lại
+    temperature = Number(temperature);
+}
+alert("Nhiệt độ hiện tại đã phù hợp: " + temperature + "°C");
+        
+        
+    </script>
+</body>
+</html>

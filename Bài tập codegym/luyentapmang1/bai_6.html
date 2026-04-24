@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [10, 25, 3, 47, 56, 12, 8, 99, 31, 20];
+        let V = parseInt(prompt("Nhập vào số nguyên V cần tìm:"));
+        let found = false;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] === V) {
+                found = true; 
+                break;
+            }
+        }
+        if (found) {
+            document.write("V is in the array");
+        } else {
+            document.write("V is not in the array");
+        }
+    </script>
+</body>
+
+</html>

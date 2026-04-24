@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh và Tính tổng</title>
+
+    <script>
+        function processNumbers(a, b) {
+            if (a > b) {
+                alert("Thông báo: Tham số thứ nhất (" + a + ") lớn hơn tham số thứ hai (" + b + ")");
+            } else {
+                return a + b;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Kết quả kiểm tra hàm</h2>
+
+    <script>
+        processNumbers(10, 5);
+
+        let result = processNumbers(3, 7);
+
+        if (result !== undefined) {
+            document.write("Tổng của hai số là: <strong>" + result + "</strong>");
+        }
+    </script>
+
+</body>
+
+</html>

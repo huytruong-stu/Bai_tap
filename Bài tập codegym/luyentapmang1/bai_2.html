@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [12, 45, 7, 89, 23, 56, 102, 34, 67, 91];
+
+        // Tìm giá trị lớn nhất bằng Spread Operator (...)
+        const maxValue = Math.max(...numbers);
+
+        // Tìm vị trí của giá trị đó
+        const maxIndex = numbers.indexOf(maxValue);
+
+        document.write(`Phần tử lớn nhất là ${maxValue} tại vị trí ${maxIndex}`);
+    </script>
+</body>
+
+</html>

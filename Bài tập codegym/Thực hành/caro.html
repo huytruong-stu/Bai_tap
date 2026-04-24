@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let board = [
+            ['.', '.', '.'],
+            ['.', '.', '.'],
+            ['.', '.', '.']
+        ];
+
+        let currentPlayer = 'X';
+
+        // Hàm hiển thị bàn cờ ra console
+        function printBoard() {
+            document.write.clear();
+        document.write("--- BÀN CỜ CARO ---");
+            board.forEach(row => console.log(row.join(' ')));
+        }
+
+        // Hàm kiểm tra người chiến thắng
+        function checkWinner() {
+            // Kiểm tra hàng và cột
+            for (let i = 0; i < 3; i++) {
+                if (board[i][0] !== '.' && board[i][0] === board[i][1] && board[i][1] === board[i][2]) return board[i][0];
+                if (board[0][i] !== '.' && board[0][i] === board[1][i] && board[1][i] === board[2][i]) return board[0][i];
+            }
+            // Kiểm tra đường chéo
+            if (board[1][1] !== '.') {
+                if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) return board[1][1];
+                if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) return board[1][1];
+            }
+            return null;
+        }
+
+        // Hàm thực hiện một lượt chơi
+        function play(row, col) {
+            if (row < 0 || row > 2 || col < 0 || col > 2 || board[row][col] !== '.') {
+                console.log("Vị trí không hợp lệ hoặc đã có người đánh!");
+                return;
+            }
+
+            board[row][col] = currentPlayer;
+            printBoard();
+
+            const winner = checkWinner();
+            if (winner) {
+                console.log(`CHÚC MỪNG! Người chơi ${winner} đã thắng!`);
+                return;
+            }
+
+            // Đổi lượt
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            console.log(`Lượt tiếp theo: Người chơi ${currentPlayer}`);
+        }
+
+        // Bắt đầu trò chơi
+        printBoard();
+        console.log("Dùng lệnh: play(hàng, cột) để đánh. Ví dụ: play(0, 1)");
+    </script>
+</body>
+
+</html>

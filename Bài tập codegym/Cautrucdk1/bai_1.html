@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="num1" id="number1" placeholder="Nhập số thứ nhất">
+    <input type="number" name="num2" id="number2" placeholder="Nhập số thứ hai">
+    <button onclick="calculate()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('number1').value);
+            var num2 = parseFloat(document.getElementById('number2').value);
+            if(num1 / num2) {
+                document.getElementById('result').innerText = "Kết quả: " + (num1 / num2);
+            } else {
+                document.getElementById('result').innerText = "Không thể chia cho 0";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function soNhoNhat(a, b, c) {
+            // return Math.min(a, b, c);
+            let min = a;
+            if (b < min) {
+                min = b;
+            }
+            if (c < min) {
+                min = c;
+            }
+            return min;
+        }
+        const result = soNhoNhat(5, -1, 100000);
+        document.write("Số nhỏ nhất là số: ", result);
+        // console.log("Số nhỏ nhất là : ", soNhoNhat(5, 10, 50));
+        // console.log("Số nhỏ nhất là : ", soNhoNhat(5, -10, -50));
+
+
+    </script>
+</body>
+
+</html>

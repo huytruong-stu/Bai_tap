@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Good Cheap Fast</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #eee;
+    padding: 50px;
+  }
+
+  .container {
+    width: 300px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+  }
+
+  .label {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  /* Toggle style */
+  .switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background: #aaa;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    top: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  input:checked + .slider {
+    background: #c9174c;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(30px);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <label class="switch">
+      <input type="checkbox" id="good">
+      <span class="slider"></span>
+    </label>
+    <div class="label">GOOD</div>
+  </div>
+
+  <div class="row">
+    <label class="switch">
+      <input type="checkbox" id="cheap">
+      <span class="slider"></span>
+    </label>
+    <div class="label">CHEAP</div>
+  </div>
+
+  <div class="row">
+    <label class="switch">
+      <input type="checkbox" id="fast">
+      <span class="slider"></span>
+    </label>
+    <div class="label">FAST</div>
+  </div>
+</div>
+
+<script src="good_fast.js">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tinhDtht(banKinh) {
+            return Math.PI * Math.pow(banKinh, 2);
+        }
+        function tinhCvht(banKinh) {
+            return 2 * Math.PI * banKinh;    
+        }
+        const r = prompt("Nhập vào đây bán kính bao nhiêu");
+        const dienTich = tinhDtht(r);
+        const chuVi = tinhCvht(r);
+        document.write(`  Bán kính là :  ${r}`);
+        document.write(` <br/> Diện tích:  ${dienTich.toFixed(2)}`);
+        document.write(` <br/> Chu vi: ${chuVi.toFixed(2)}`);
+    </script>
+</body>
+</html>
